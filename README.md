@@ -1,37 +1,34 @@
-# LabManageSystem
+## 开发环境准备：
 
-#### 介绍
-实验室管理系统--用于注册识别实验室人员，并进行管理
+### 开发使用到的软件和工具：
 
-#### 软件架构
-软件架构说明
-
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+* Jdk17、libarcsoft_face.dll(so)、libarcsoft_face_engine.dll(so)、libarcsoft_face_engine_jni.dll(so)、idea
+* 注：libarcsoft_face.dll(so)、libarcsoft_face_engine.dll(so)、libarcsoft_face_engine_jni.dll(so)
+  、app-id、sdk-key可以到虹软官网 http://ai.arcsoft.com.cn/ 免费申请下载
 
 
-#### 特技
+* 本地配置：
+    * 配置环境(推荐jdk17，maven3，idea)
+    * 引擎库libarcsoft_face、libarcsoft_face_engine、libarcsoft_face_engine_jni。注意区分X86和X64，和当前jdk版本一致。
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+* 初始化项目
+* 使用idea启动项目
+    * 修改配置文件src\main\resources\application.properties
+        * 填写人脸识别id：config.arcface-sdk.app-id
+        * 填写人脸识别key：config.arcface-sdk.sdk-key
+    * 替换src\main\resources\libs\3.0下面的库文件
+    * 检查pom.xml文件的<properties>中的<javacv.platform>配置是否与当前操作系统匹配，注：如需要打包成在linux上运行，需将配置切换到 *linux-x86_64*，然后进行打包
+
+* 启动项目
+    * 在com.arcsoft.facedemo包下，右击Application，选择Run ‘Application’
+
+* 后端使用springboot+javacv，前端使用vue3，支持人脸检测，人脸比对，人脸识别，本地视频识别，rtsp视频流识别等
+
+[//]: # (* 前端代码：)
+
+[//]: # (    * https://github.com/itboyst/ArcSoftFaceDemoUI)
+
+
+### 启动步骤(不按顺序)：
+* 启动redis服务器
+* 启动前端程序 npm run serve(LabManageSystemUI)  访问：127.0.0.1:8088
