@@ -4,9 +4,24 @@
 <mapper namespace="com.lab.labmanagesystem.mapper.StudentMapper">
 
     <insert id="save" useGeneratedKeys="true" keyProperty="id">
-        insert into student (name, phone, sex, grade, enrollment_year, desk, province, create_time, update_time)
+        insert into student (name, phone, sex, enrollment_year, desk, province, create_time, update_time)
             values
-            (#{name},#{phone},#{sex},#{grade},#{enrollmentYear},#{desk},#{province},#{createTime},#{updateTime})
+            (#{name},#{phone},#{sex},#{enrollmentYear},#{desk},#{province},#{createTime},#{updateTime})
     </insert>
+
+    <update id="update">
+        update student
+        <set>
+            <if test="name != null">name = #{name},</if>
+            <if test="phone != null"> phone = #{phone},</if>
+            <if test="sex != null">sex = #{sex},</if>
+            <if test="grade != null">grade = #{grade},</if>
+            <if test="enrollmentYear != null">enrollment_year = #{enrollmentYear},</if>
+            <if test="desk != null">desk = #{desk},</if>
+            <if test="province != null">province = #{province},</if>
+            <if test="updateTime != null">update_time = #{updateTime}</if>
+        </set>
+        where name = #{name}
+    </update>
 
 </mapper>

@@ -226,7 +226,7 @@ public class FaceCaptureServiceImpl implements FaceCaptureService {
 
         studentFace.setName(student.getName());
 
-        // 检查redis中是否还保存着人脸特征
+        // 从redis中获取人脸特征
         String feature = (String) redisTemplate.opsForValue().get(RedisKeyConstant.KEY_FACE_FEATURE);
         studentFace.setFace(feature);
 
@@ -240,7 +240,7 @@ public class FaceCaptureServiceImpl implements FaceCaptureService {
 
 
         byte[] image = Base64Util.base64ToBytes(informationSubmitDTO.getPhoto());
-        // 修建图片 并将图片保存在静态资源中
+        // 修建图片 并将图片上传至阿里云Oss
         try{
             BufferedImage originalImage = ImageIO.read(new ByteArrayInputStream(image));
 
