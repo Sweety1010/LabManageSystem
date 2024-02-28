@@ -20,9 +20,9 @@
     * 检查pom.xml文件的<properties>中的<javacv.platform>配置是否与当前操作系统匹配，注：如需要打包成在linux上运行，需将配置切换到 *linux-x86_64*，然后进行打包
 
 * 启动项目
-    * 在com.arcsoft.facedemo包下，右击Application，选择Run ‘Application’
+    * 在com.lab.labmanagesystem包下，右击LabManageSystemApplication，选择Run ‘Application’
 
-* 后端使用springboot+javacv，前端使用vue3，支持人脸检测，人脸比对，人脸识别，本地视频识别，rtsp视频流识别等
+* 后端使用springboot+javacv，前端使用vue3，支持人脸注册，人脸识别，本地视频识别，rtsp视频流识别等
 
 [//]: # (* 前端代码：)
 
@@ -31,4 +31,4 @@
 
 ### 启动步骤(不按顺序)：
 * 启动redis服务器
-* 启动前端程序 npm run serve(LabManageSystemUI)  访问：127.0.0.1:8088
+* 启动前端程序 npm run serve(LabManageSystemUI)  访问：127.0.0.1:8088 （前端代码地址：https://github.com/Sweety1010/LabManageSystemUI）
