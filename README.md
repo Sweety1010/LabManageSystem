@@ -31,4 +31,4 @@
 
 ### 启动步骤(不按顺序)：
 * 启动redis服务器
-* 启动前端程序 npm run serve(LabManageSystemUI)  访问：127.0.0.1:8088 （前端代码地址：https://github.com/Sweety1010/LabManageSystemUI）
+* 启动前端程序 npm run serve(LabManageSystemUI)  访问：127.0.0.1:8088 （前端代码地址：https://github.com/Sweety1010/LabManageSystemUI.git）
